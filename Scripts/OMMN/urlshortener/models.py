@@ -7,7 +7,7 @@ def Code_generator(size=6, chars=string.ascii_lowercase + string.digits):
 # Create your models here.
 class OMMNUrl(models.Model):
     url = models.CharField(max_length=220, )
-    shortcode = models.CharField(max_length=15, unique=True)
+    shortcode = models.CharField(max_length=15, unique=True, default='defcode')
     updated = models.DateTimeField(auto_now=True)
     timestamp = models.DateTimeField(auto_now_add=True)
 
