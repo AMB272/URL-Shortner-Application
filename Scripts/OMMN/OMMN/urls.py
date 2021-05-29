@@ -20,6 +20,6 @@ from urlshortener.views import ommn_redirect_view, OmmnCBView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('view-1/', ommn_redirect_view),
-    path('view-2/', OmmnCBView.as_view()),
+    path('a/<slug:shortcode>/', ommn_redirect_view),
+    path('b/<slug:shortcode>/', OmmnCBView.as_view()),
 ]
