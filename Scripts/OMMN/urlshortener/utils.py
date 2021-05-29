@@ -1,5 +1,9 @@
 import random, string, sys
 
+from django.conf import settings
+
+SHORTCODE_MIN = getattr(settings, "SHORTCODE_MIN", 6)
+
 def Code_generator(size=6, chars=string.ascii_lowercase + string.digits):
     return ''.join(random.choice(chars) for _ in range(size))
 

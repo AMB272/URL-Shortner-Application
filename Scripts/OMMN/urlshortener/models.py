@@ -1,6 +1,10 @@
+from Scripts.OMMN.OMMN.settings import SHORTCODE_MAX
 from django.db import models
+from django.conf import settings
 
 from .utils import Code_generator, create_shortcode
+
+SHORTCODE_MAX = getattr(settings, "SHORTCODE_MAX", 15)
 
 class OMMNUrlManager(models.Manager):
     def all(self, *args, **kwargs):
