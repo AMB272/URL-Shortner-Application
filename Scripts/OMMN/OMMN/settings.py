@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-9(podk@9c2@6&r9ylccqepjy#t_*@g82!y_+^pvi4rc2+%3640
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['www.ommn.com', 'ommn.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'www.ommn.com', 'ommn.com']
 
 
 # Application definition
@@ -40,9 +40,13 @@ INSTALLED_APPS = [
 
     #Custom apps
     'urlshortener',
+
+    #third party
+    'django_hosts',
 ]
 
 MIDDLEWARE = [
+    'django_hosts.middleware.HostsRequestMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -50,9 +54,16 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_hosts.middleware.HostsResponseMiddleware',
 ]
 
 ROOT_URLCONF = 'OMMN.urls'
+
+ROOT_HOSTCONF = 'OMMN.hosts'
+
+DEFAULT_HOST = 'www'
+
+DEFAULT_REDIRECT_URL = "https://www.ommn.com"
 
 TEMPLATES = [
     {
