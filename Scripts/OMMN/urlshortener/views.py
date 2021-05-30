@@ -20,13 +20,24 @@ class HomeView(View):
         # print(request.POST)
         # print(request.POST.get("url"))
         form = SubmitUrlForm(request.POST)
-        if form.is_valid():
-            print(form.cleaned_data)
         context = {
             "title": "Submitted URL",
             "form": form
         }
-        return render(request, "urlshortener/home.html", context)
+        template = "urlshortener/home.html"
+        if form.is_valid():
+            new_url = form.cleaned_data.get("url")
+            obj, created = OMMNUrl.objects.get_or_create(url=new_url)
+            context = {
+                "object":obj,
+                "created":created,
+            }
+            if created:
+                template = "urlshortener/success.html"
+            else:
+                template = "urlshortener/already-exists.html"
+
+        return render(request, template, context)
 
 # Create your views here.
 # def ommn_redirect_view(request, shortcode=None, *args, **kwargs): #function based view
