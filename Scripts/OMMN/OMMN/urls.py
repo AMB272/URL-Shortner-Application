@@ -16,10 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from urlshortener.views import ommn_redirect_view, OmmnCBView
+from urlshortener.views import HomeView, OmmnCBView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('a/<slug:shortcode>/', ommn_redirect_view),
-    path('b/<slug:shortcode>/', OmmnCBView.as_view()),
+    path('', HomeView.as_view()),
+    path('a/<slug:shortcode>/', OmmnCBView.as_view()),
 ]
