@@ -13,7 +13,7 @@ class HomeView(View):
     def get(self, request, *args, **kwargs):
         the_form = SubmitUrlForm()
         context = {
-            "title": "Submit URL",
+            "title": "OMMN.com, shorten URLs here!",
             "form": the_form
         }
         return render(request, "urlshortener/home.html", context)
@@ -23,7 +23,7 @@ class HomeView(View):
         # print(request.POST.get("url"))
         form = SubmitUrlForm(request.POST)
         context = {
-            "title": "Submitted URL",
+            "title": "OMMN.com, shorten URLs here",
             "form": form
         }
         template = "urlshortener/home.html"

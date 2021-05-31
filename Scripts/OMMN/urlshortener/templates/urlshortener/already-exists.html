@@ -1,8 +1,17 @@
-<div style="text-align: center; width: 900px; margin: 0 auto;">
-    <h1>Exists</h1>
+{% extends "base.html" %}
+
+{% block title %}
+{{ object.shortcode }}
+{% endblock title %}
+
+
+{% block content %}
+<div style="text-align: center;">
+    <h1>Already Exists!</h1>
     <p>{{ object.url }}</p>
 
     <!-- <p>{{ object.get_short_url }}</p> -->
     <p><a href="{{ object.get_short_url }}">{{ object.get_short_url }}</a></p>
-    <a href="/">+ New</a>
+    <a class="btn btn-default border-white bg-white" href="/">+ New</a>
 </div>
+{% endblock content %}
