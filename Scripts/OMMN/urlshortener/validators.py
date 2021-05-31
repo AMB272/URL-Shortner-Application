@@ -11,7 +11,6 @@ def validate_url(value):
         val_1_invalid = True
     
     val_2_url = "http://" + value #as links without 'http' prefix can still be valid, changing the url value to accomodate this
-
     try:
         url_validator(val_2_url)
     except:

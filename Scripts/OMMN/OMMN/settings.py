@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     #Custom apps
     'urlshortener',
+    'analytics',
 
     #third party
     'django_hosts',
@@ -63,7 +64,9 @@ ROOT_HOSTCONF = 'OMMN.hosts'
 
 DEFAULT_HOST = 'www'
 
-DEFAULT_REDIRECT_URL = "https://www.ommn.com"
+DEFAULT_REDIRECT_URL = "https://www.ommn.com:8000"
+
+PARENT_HOST = "ommn.com:8000"
 
 TEMPLATES = [
     {

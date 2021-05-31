@@ -1,6 +1,7 @@
 from Scripts.OMMN.OMMN.settings import SHORTCODE_MAX
 from django.db import models
 from django.conf import settings
+from django_hosts.resolvers import reverse
 
 from .utils import Code_generator, create_shortcode
 
@@ -38,6 +39,10 @@ class OMMNUrl(models.Model):
         if self.shortcode is None or self.shortcode == "":
             self.shortcode = create_shortcode(self)
         super(OMMNUrl, self).save(*args, **kwargs)
+
+    def get_short_url(self):
+        url_path = reverse("scode", kwargs={'shortcode':self.shortcode}, host="www", scheme='http')
+        return url_path
 
     def __str__(self):
         return str(self.url)

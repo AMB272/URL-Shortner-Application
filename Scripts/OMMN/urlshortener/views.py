@@ -4,6 +4,8 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import redirect, render, get_object_or_404
 from django.views import View
 
+from analytics.models import ClickEvent
+
 from .forms import SubmitUrlForm
 from .models import OMMNUrl
 
@@ -44,7 +46,8 @@ class HomeView(View):
 #     obj = get_object_or_404(OMMNUrl, shortcode=shortcode)
 #     return HttpResponseRedirect(obj.url)
 
-class OmmnCBView(View):
+class URLRedirectView(View):
     def get(self, request, shortcode=None, *args, **kwargs): #class based view
         obj = get_object_or_404(OMMNUrl, shortcode=shortcode)
-        return HttpResponse(f"hello again {shortcode}")
+        print(ClickEvent.objects.create_event(obj))
+        return HttpResponseRedirect(obj.url)
