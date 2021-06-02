@@ -1,1 +1,1 @@
-web: gunicorn OMMN.wsgi --log-file -
+web: gunicorn OMMN.wsgi
