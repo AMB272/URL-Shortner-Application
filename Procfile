@@ -1,0 +1,1 @@
+web: gunicorn Scripts.OMMN.OMMN.wsgi
