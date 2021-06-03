@@ -1,4 +1,4 @@
-from OMMN.OMMN.settings import SHORTCODE_MAX
+from OMMN.settings import SHORTCODE_MAX
 from django.db import models
 from django.conf import settings
 from django_hosts.resolvers import reverse
