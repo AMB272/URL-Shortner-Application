@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.http.response import HttpResponseRedirect
 
 DEFAULT_REDIRECT_URL = getattr(settings, "DEFAULT_REDIRECT_URL", "https://www.ommn.com")
