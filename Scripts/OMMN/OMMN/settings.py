@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-9(podk@9c2@6&r9ylccqepjy#t_*@g82!y_+^pvi4rc2+%3640
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['www.ommn.com', 'ommn.com']
+ALLOWED_HOSTS = ['www.ommn.com', 'ommn.com', 'https://ommn-url.herokuapp.com/']
 
 
 # Application definition
