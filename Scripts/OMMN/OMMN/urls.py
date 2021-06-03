@@ -21,5 +21,5 @@ from urlshortener.views import HomeView, URLRedirectView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', HomeView.as_view()),
-    path('<slug:shortcode>/', URLRedirectView.as_view(), name="scode"),
+    path('<slug:shortcode>', URLRedirectView.as_view(), name="scode"),
 ]
