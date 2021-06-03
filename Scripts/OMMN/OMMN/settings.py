@@ -62,7 +62,7 @@ ROOT_URLCONF = 'OMMN.urls'
 
 ROOT_HOSTCONF = 'OMMN.hosts'
 
-DEFAULT_HOST = 'ommn-url'
+DEFAULT_HOST = 'www'
 
 DEFAULT_REDIRECT_URL = "https://ommn-url.herokuapp.com/"
 
