@@ -64,9 +64,9 @@ ROOT_HOSTCONF = 'OMMN.hosts'
 
 DEFAULT_HOST = 'www'
 
-DEFAULT_REDIRECT_URL = "https://www.ommn.com"
+DEFAULT_REDIRECT_URL = "https://ommn-url.herokuapp.com/"
 
-PARENT_HOST = "ommn.com"
+PARENT_HOST = "ommn-url.herokuapp.com"
 
 TEMPLATES = [
     {
