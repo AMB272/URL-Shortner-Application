@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-
+import django_heroku
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-9(podk@9c2@6&r9ylccqepjy#t_*@g82!y_+^pvi4rc2+%3640
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['ommn-url.herokuapp.com', 'herokuapp.com']
+ALLOWED_HOSTS = ['ommn-url.herokuapp.com']
 
 
 # Application definition
@@ -62,11 +62,11 @@ ROOT_URLCONF = 'OMMN.urls'
 
 ROOT_HOSTCONF = 'OMMN.hosts'
 
-DEFAULT_HOST = 'ommn-url'
+DEFAULT_HOST = 'www'
 
 DEFAULT_REDIRECT_URL = "http://ommn-url.herokuapp.com/"
 
-PARENT_HOST = "herokuapp.com"
+PARENT_HOST = "ommn-url.herokuapp.com"
 
 TEMPLATES = [
     {
@@ -143,3 +143,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 SHORTCODE_MAX = 10
 SHORTCODE_MIN = 4
+
+# Activate Django-Heroku.
+django_heroku.settings(locals())
