@@ -3,5 +3,5 @@ from django_hosts import patterns, host
 
 host_patterns = patterns('',
     #host(r'(?!www).*', 'OMMN.hostsconf.urls', name='wildcard'),
-    host(r'www', settings.ROOT_URLCONF, name='ommn-url'),
+    host(r'ommn-url', settings.ROOT_URLCONF, name='ommn-url'),
 )
