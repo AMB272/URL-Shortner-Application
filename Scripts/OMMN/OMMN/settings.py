@@ -66,7 +66,7 @@ DEFAULT_HOST = 'www'
 
 DEFAULT_REDIRECT_URL = "http://ommn-url.herokuapp.com/"
 
-PARENT_HOST = "herokuapp.com"
+PARENT_HOST = "ommn-url.herokuapp.com"
 
 TEMPLATES = [
     {
