@@ -43,8 +43,8 @@ class OMMNUrl(models.Model):
         super(OMMNUrl, self).save(*args, **kwargs)
 
     def get_short_url(self):
-        url_path = reverse("scode", kwargs={'shortcode':self.shortcode}, host='ommn-url', scheme='http')
-        #url_path = f"http://ommn-url.herokuapp.com/{self.shortcode}"
+        #url_path = reverse("scode", kwargs={'shortcode':self.shortcode}, host='ommn-url', scheme='http')
+        url_path = f"http://ommn-url.herokuapp.com/{self.shortcode}"
         return url_path
 
     def __str__(self):
