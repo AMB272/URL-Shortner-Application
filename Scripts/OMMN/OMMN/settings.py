@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-9(podk@9c2@6&r9ylccqepjy#t_*@g82!y_+^pvi4rc2+%3640
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['ommn-url.herokuapp.com']
+ALLOWED_HOSTS = ['ommn-url.herokuapp.com', 'herokuapp.com']
 
 
 # Application definition
@@ -62,11 +62,11 @@ ROOT_URLCONF = 'OMMN.urls'
 
 ROOT_HOSTCONF = 'OMMN.hosts'
 
-DEFAULT_HOST = 'www'
+DEFAULT_HOST = 'ommn-url'
 
 DEFAULT_REDIRECT_URL = "http://ommn-url.herokuapp.com/"
 
-PARENT_HOST = "ommn-url.herokuapp.com"
+PARENT_HOST = "herokuapp.com"
 
 TEMPLATES = [
     {
